@@ -44,12 +44,14 @@ def prepare_problem_data():
 
         created_problem_url = problem_domain.format(
             problem["contestId"], problem.get("index", ""))
+        complete_tag_list = problem.get("tags", [])
+        complete_tag_list = ' '.join(complete_tag_list)
         problem_details = {
             "Problem Type": problem.get("index", ""),
             "Problem Name": problem.get("name", ""),
             "Rating": problem.get("rating", ""),
             "Problem URL": created_problem_url,
-            "Tags": str(problem.get("tags", ""))
+            "Tags": complete_tag_list
         }
         prepare_data[problem["contestId"]
                      ]["problem_list"].append(problem_details)
