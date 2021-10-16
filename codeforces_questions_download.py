@@ -16,7 +16,7 @@ prepare_data = {}
 # Assuming that CSV is in the same folder as this script
 output_sheet_name = "Codeforces Question Details.csv"
 csv_fieldnames = ["Contest Id", "Contest Name", "Contest Date",
-                  "Problem Type", "Problem Name", "Rating", "Problem URL"]
+                  "Problem Type", "Problem Name", "Rating", "Problem URL", "Tags"]
 
 
 def prepare_contest_data():
@@ -48,7 +48,8 @@ def prepare_problem_data():
             "Problem Type": problem.get("index", ""),
             "Problem Name": problem.get("name", ""),
             "Rating": problem.get("rating", ""),
-            "Problem URL": created_problem_url
+            "Problem URL": created_problem_url,
+            "Tags": str(problem.get("tags", ""))
         }
         prepare_data[problem["contestId"]
                      ]["problem_list"].append(problem_details)
