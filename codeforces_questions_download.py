@@ -1,3 +1,6 @@
+# Update: 28 Dec, 2022
+# The code is pretty old and not optimized. Will update someday.
+
 # Steps to Execute
 # 1. touch Codeforces Question Details.csv
 # 2. python3 codeforces_questions_download.py
